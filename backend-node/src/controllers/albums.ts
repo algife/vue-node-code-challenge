@@ -6,10 +6,10 @@ export const getAlbumsByArtistIdHandler = async (
   req: Request,
   res: Response
 ) => {
-  const { amgArtistId } = req.params;
+  const { artistId } = req.params;
   const { entity } = req.query;
 
-  const result = await iTunesLookUp(amgArtistId as string, entity as string);
+  const result = await iTunesLookUp(artistId as string, entity as string);
 
   return res.status(200).json({ data: result });
 };

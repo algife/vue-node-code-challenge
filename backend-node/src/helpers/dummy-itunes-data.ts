@@ -1,1054 +1,1325 @@
-const dummyData: any = {
-  resultCount: 40,
-  results: [
-    {
-      wrapperType: "artist",
-      artistType: "Artist",
-      artistName: "Jack Johnson",
-      artistLinkUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      artistId: 909253,
-      amgArtistId: 468749,
-      primaryGenreName: "Rock",
-      primaryGenreId: 21,
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1440857781,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "In Between Dreams (Bonus Track Version)",
-      collectionCensoredName: "In Between Dreams (Bonus Track Version)",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/in-between-dreams-bonus-track-version/1440857781?uo=4",
-      artworkUrl60:
-        "https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/db/d9/1a/dbd91afa-044d-637b-c557-847863c85a79/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/db/d9/1a/dbd91afa-044d-637b-c557-847863c85a79/source/100x100bb.jpg",
-      collectionPrice: 6.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 16,
-      copyright: "℗ 2013 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2005-03-01T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1440854851,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Sleep Through the Static",
-      collectionCensoredName: "Sleep Through the Static",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/sleep-through-the-static/1440854851?uo=4",
-      artworkUrl60:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/c4/65/6a/c4656ad0-6f0b-0b8b-152d-0236b86ace39/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/c4/65/6a/c4656ad0-6f0b-0b8b-152d-0236b86ace39/source/100x100bb.jpg",
-      collectionPrice: 15.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 15,
-      copyright: "℗ 2014 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2008-02-01T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1440851963,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "To the Sea (Bonus Track Version)",
-      collectionCensoredName: "To the Sea (Bonus Track Version)",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/to-the-sea-bonus-track-version/1440851963?uo=4",
-      artworkUrl60:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music114/v4/2a/ee/04/2aee045d-12b0-84f2-56df-1c357118c63f/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music114/v4/2a/ee/04/2aee045d-12b0-84f2-56df-1c357118c63f/source/100x100bb.jpg",
-      collectionPrice: 9.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 15,
-      copyright: "℗ 2014 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2010-06-01T07:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1435611352,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "From Here to Now to You",
-      collectionCensoredName: "From Here to Now to You",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/from-here-to-now-to-you/1435611352?uo=4",
-      artworkUrl60:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/bb/d4/3d/bbd43d98-7095-3c70-336a-b0cde2df20c9/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/bb/d4/3d/bbd43d98-7095-3c70-336a-b0cde2df20c9/source/100x100bb.jpg",
-      collectionPrice: 9.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 12,
-      copyright: "℗ 2013 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2013-09-17T07:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1440752312,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName:
-        "Jack Johnson & Friends - Best of Kokua Festival (A Benefit for the Kokua Hawaii Foundation)",
-      collectionCensoredName:
-        "Jack Johnson & Friends - Best of Kokua Festival (A Benefit for the Kokua Hawaii Foundation)",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/jack-johnson-friends-best-of-kokua-festival-a/1440752312?uo=4",
-      artworkUrl60:
-        "https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/68/ca/d4/68cad45e-e7b7-e8f9-067e-cef6d8fb2f04/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/68/ca/d4/68cad45e-e7b7-e8f9-067e-cef6d8fb2f04/source/100x100bb.jpg",
-      collectionPrice: 8.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 15,
-      copyright: "This Compilation ℗ 2012 Brushfire Records Inc",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2012-01-01T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1440851725,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "En Concert (Live)",
-      collectionCensoredName: "En Concert (Live)",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/en-concert-live/1440851725?uo=4",
-      artworkUrl60:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/c3/a1/04/c3a104db-4caa-4ecf-55d1-ae1fa9947d94/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/c3/a1/04/c3a104db-4caa-4ecf-55d1-ae1fa9947d94/source/100x100bb.jpg",
-      collectionPrice: 9.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 20,
-      copyright: "℗ 2014 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2009-10-26T07:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 906900960,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Brushfire Fairytales (Remastered) [Bonus Version]",
-      collectionCensoredName:
-        "Brushfire Fairytales (Remastered) [Bonus Version]",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/brushfire-fairytales-remastered-bonus-version/906900960?uo=4",
-      artworkUrl60:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/8a/00/26/8a00262b-136e-32de-29ba-3e0a0280e2f6/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/8a/00/26/8a00262b-136e-32de-29ba-3e0a0280e2f6/source/100x100bb.jpg",
-      collectionPrice: 9.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 15,
-      copyright: "℗ 2011 Everloving Records",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2011-04-12T07:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1440890871,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "All the Light Above It Too",
-      collectionCensoredName: "All the Light Above It Too",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/all-the-light-above-it-too/1440890871?uo=4",
-      artworkUrl60:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/09/61/22/0961224e-34b2-87c5-188b-7a87ac90cf62/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/09/61/22/0961224e-34b2-87c5-188b-7a87ac90cf62/source/100x100bb.jpg",
-      collectionPrice: 10.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 10,
-      copyright: "℗ 2017 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2017-09-08T07:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1445738051,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "To the Sea",
-      collectionCensoredName: "To the Sea",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/to-the-sea/1445738051?uo=4",
-      artworkUrl60:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/9d/93/4f/9d934f95-4fb1-d901-1d7f-4d379f4987c7/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/9d/93/4f/9d934f95-4fb1-d901-1d7f-4d379f4987c7/source/100x100bb.jpg",
-      collectionPrice: 11.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 15,
-      copyright: "℗ 2010 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2010-01-01T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1443257847,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Sessions@AOL - EP",
-      collectionCensoredName: "Sessions@AOL - EP",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/sessions-aol-ep/1443257847?uo=4",
-      artworkUrl60:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/11/4e/d5/114ed5cd-1fee-ee85-6f7a-b1674a17fac9/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/11/4e/d5/114ed5cd-1fee-ee85-6f7a-b1674a17fac9/source/100x100bb.jpg",
-      collectionPrice: 3.49,
-      collectionExplicitness: "notExplicit",
-      trackCount: 4,
-      copyright: "℗ 2005 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2005-01-01T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1442990321,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "From Here To Now To You Live - EP",
-      collectionCensoredName: "From Here To Now To You Live - EP",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/from-here-to-now-to-you-live-ep/1442990321?uo=4",
-      artworkUrl60:
-        "https://is4-ssl.mzstatic.com/image/thumb/Music123/v4/f7/58/c5/f758c5f0-ca4f-44c9-c966-4e613e07c1d7/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is4-ssl.mzstatic.com/image/thumb/Music123/v4/f7/58/c5/f758c5f0-ca4f-44c9-c966-4e613e07c1d7/source/100x100bb.jpg",
-      collectionPrice: 3.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 6,
-      copyright: "℗ 2014 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2014-04-22T07:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1469577723,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName:
-        "Jack Johnson and Friends: Sing-A-Longs and Lullabies for the Film Curious George",
-      collectionCensoredName:
-        "Jack Johnson and Friends: Sing-A-Longs and Lullabies for the Film Curious George",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/jack-johnson-and-friends-sing-a-longs-and/1469577723?uo=4",
-      artworkUrl60:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ae/4c/d4/ae4cd42a-80a9-d950-16f5-36f01a9e1881/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ae/4c/d4/ae4cd42a-80a9-d950-16f5-36f01a9e1881/source/100x100bb.jpg",
-      collectionPrice: 6.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 15,
-      copyright: "℗ 2014 Brushfire Records",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2006-02-07T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1440853796,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "On and On",
-      collectionCensoredName: "On and On",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/on-and-on/1440853796?uo=4",
-      artworkUrl60:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/83/fd/0f/83fd0f2d-095f-28c4-6eeb-f22d9afc04d9/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/83/fd/0f/83fd0f2d-095f-28c4-6eeb-f22d9afc04d9/source/100x100bb.jpg",
-      collectionPrice: 6.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 17,
-      copyright:
-        "℗ 2014 The Moonshine Conspiracy Records, Manufactured and Marketed by Universal Records, a Division of UMG Recordings, Inc.",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2003-05-06T07:00:00Z",
-      primaryGenreName: "Pop",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1445308293,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "iTunes Festival: London 2013 - EP",
-      collectionCensoredName: "iTunes Festival: London 2013 - EP",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/itunes-festival-london-2013-ep/1445308293?uo=4",
-      artworkUrl60:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music123/v4/5b/f4/a8/5bf4a82a-49ad-f78a-1adb-001f08761f80/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music123/v4/5b/f4/a8/5bf4a82a-49ad-f78a-1adb-001f08761f80/source/100x100bb.jpg",
-      collectionPrice: 8.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 8,
-      copyright: "℗ 2014 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2014-01-01T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1440768692,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "In Between Dreams",
-      collectionCensoredName: "In Between Dreams",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/in-between-dreams/1440768692?uo=4",
-      artworkUrl60:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music128/v4/9e/c7/06/9ec70611-04aa-879b-8de3-1b709afbf116/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music128/v4/9e/c7/06/9ec70611-04aa-879b-8de3-1b709afbf116/source/100x100bb.jpg",
-      collectionPrice: 7.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 14,
-      copyright: "℗ 2005 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2005-01-01T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1440655454,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson and Friends",
-      collectionName:
-        "Sing-A-Longs and Lullabies for the film Curious George (Soundtrack)",
-      collectionCensoredName:
-        "Sing-A-Longs and Lullabies for the film Curious George (Soundtrack)",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/sing-a-longs-and-lullabies-for-the-film/1440655454?uo=4",
-      artworkUrl60:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music128/v4/5d/27/ad/5d27add6-18af-c7ce-a2e8-a91418f9c2a4/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music128/v4/5d/27/ad/5d27add6-18af-c7ce-a2e8-a91418f9c2a4/source/100x100bb.jpg",
-      collectionPrice: 8.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 13,
-      copyright: "℗ 2005 Universal Records Inc.",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2005-01-01T08:00:00Z",
-      primaryGenreName: "Soundtrack",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1440764257,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "On and On",
-      collectionCensoredName: "On and On",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/on-and-on/1440764257?uo=4",
-      artworkUrl60:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/34/f3/0d/34f30dbb-acb0-11fe-e8bd-2f527c874930/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/34/f3/0d/34f30dbb-acb0-11fe-e8bd-2f527c874930/source/100x100bb.jpg",
-      collectionPrice: 8.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 16,
-      copyright:
-        "℗ 2003 The Moonshine Conspiracy Records, Manufactured and Marketed by Universal Records, a Division of UMG Recordings, Inc.",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2003-01-01T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1424723863,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson and Friends",
-      collectionName:
-        "Sing-A-Longs and Lullabies for the film Curious George (Soundtrack)",
-      collectionCensoredName:
-        "Sing-A-Longs and Lullabies for the film Curious George (Soundtrack)",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/sing-a-longs-and-lullabies-for-the-film/1424723863?uo=4",
-      artworkUrl60:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music124/v4/fd/3a/89/fd3a8913-8cc0-9ac9-d1cb-918a4c8d44a4/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music124/v4/fd/3a/89/fd3a8913-8cc0-9ac9-d1cb-918a4c8d44a4/source/100x100bb.jpg",
-      collectionPrice: 9.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 14,
-      copyright:
-        "A Brushfire Records/Republic Records release; ℗ 2006 Brushfire Records",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2006-02-07T08:00:00Z",
-      primaryGenreName: "Soundtrack",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1445828301,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Sleep Through the Static: Remixed",
-      collectionCensoredName: "Sleep Through the Static: Remixed",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/sleep-through-the-static-remixed/1445828301?uo=4",
-      artworkUrl60:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music124/v4/e1/a0/be/e1a0be5a-4ef0-a799-7993-9af1b57b4861/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music124/v4/e1/a0/be/e1a0be5a-4ef0-a799-7993-9af1b57b4861/source/100x100bb.jpg",
-      collectionPrice: 8.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 10,
-      copyright: "℗ 2008 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2008-01-01T08:00:00Z",
-      primaryGenreName: "Alternative",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1444316359,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "In the Morning - Single",
-      collectionCensoredName: "In the Morning - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/in-the-morning-single/1444316359?uo=4",
-      artworkUrl60:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music128/v4/13/ad/b7/13adb78f-2412-7a90-3a21-8a5565c8be3a/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music128/v4/13/ad/b7/13adb78f-2412-7a90-3a21-8a5565c8be3a/source/100x100bb.jpg",
-      collectionPrice: 1.29,
-      collectionExplicitness: "notExplicit",
-      trackCount: 1,
-      copyright: "℗ 2011 Brushfire Records",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2011-01-01T08:00:00Z",
-      primaryGenreName: "Holiday",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1443122928,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Sleep Through the Static",
-      collectionCensoredName: "Sleep Through the Static",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/sleep-through-the-static/1443122928?uo=4",
-      artworkUrl60:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/86/de/57/86de57ef-873d-0c24-e212-30cf9890028b/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/86/de/57/86de57ef-873d-0c24-e212-30cf9890028b/source/100x100bb.jpg",
-      collectionPrice: 11.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 14,
-      copyright: "℗ 2008 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2008-01-01T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1442238823,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Sing-a-Longs and Lullabies for the Film Curious George",
-      collectionCensoredName:
-        "Sing-a-Longs and Lullabies for the Film Curious George",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/sing-a-longs-and-lullabies-for-the-film-curious-george/1442238823?uo=4",
-      artworkUrl60:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/9e/8c/63/9e8c6305-32f3-69e2-7e03-8490c17095ce/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/9e/8c/63/9e8c6305-32f3-69e2-7e03-8490c17095ce/source/100x100bb.jpg",
-      collectionPrice: 9.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 14,
-      copyright: "℗ 2005 Universal Records Inc.",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2005-01-01T08:00:00Z",
-      primaryGenreName: "Soundtrack",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1444409805,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Wasting Time - Single",
-      collectionCensoredName: "Wasting Time - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/wasting-time-single/1444409805?uo=4",
-      artworkUrl60:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/76/a5/92/76a592c9-6c3e-de47-d9f6-f24ed2fea04b/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/76/a5/92/76a592c9-6c3e-de47-d9f6-f24ed2fea04b/source/100x100bb.jpg",
-      collectionExplicitness: "notExplicit",
-      trackCount: 2,
-      copyright:
-        "This Compilation ℗ 2006 Universal Music International Division, a division of Universal Music GmbH",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2006-01-01T08:00:00Z",
-      primaryGenreName: "Pop",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1452917060,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Breakdown - Single",
-      collectionCensoredName: "Breakdown - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/breakdown-single/1452917060?uo=4",
-      artworkUrl60:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music124/v4/05/59/c1/0559c1d7-2800-7c1e-9620-04063cd96ea5/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music124/v4/05/59/c1/0559c1d7-2800-7c1e-9620-04063cd96ea5/source/100x100bb.jpg",
-      collectionPrice: 2.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 3,
-      copyright: "A Republic Records Release; ℗ 2005 UMG Recordings, Inc.",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2005-09-12T07:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1542691845,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "The Captain Is Drunk - Single",
-      collectionCensoredName: "The Captain Is Drunk - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/the-captain-is-drunk-single/1542691845?uo=4",
-      artworkUrl60:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/9e/09/58/9e0958c1-106c-66fe-c860-fd95e767fbe4/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/9e/09/58/9e0958c1-106c-66fe-c860-fd95e767fbe4/source/100x100bb.jpg",
-      collectionPrice: 1.29,
-      collectionExplicitness: "notExplicit",
-      trackCount: 1,
-      copyright: "℗ 2020 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2020-12-04T08:00:00Z",
-      primaryGenreName: "Singer/Songwriter",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 79223185,
-      collectionId: 1445304981,
-      amgArtistId: 649174,
-      artistName: "Zach Gill & Jack Johnson",
-      collectionName: "Family - Single",
-      collectionCensoredName: "Family - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/zach-gill/79223185?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/family-single/1445304981?uo=4",
-      artworkUrl60:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music128/v4/f2/51/45/f2514517-6f9e-3bff-a11f-6144dab49644/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music128/v4/f2/51/45/f2514517-6f9e-3bff-a11f-6144dab49644/source/100x100bb.jpg",
-      collectionPrice: 2.28,
-      collectionExplicitness: "notExplicit",
-      trackCount: 2,
-      copyright:
-        "A Universal Music Enterprises Release; ℗ 2008 UMG Recordings, Inc.",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2008-01-01T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 611146795,
-      collectionId: 1533482688,
-      amgArtistId: 2863420,
-      artistName: "Milky Chance & Jack Johnson",
-      collectionName: "Don't Let Me Down (Poolside Remix) - Single",
-      collectionCensoredName: "Don't Let Me Down (Poolside Remix) - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/milky-chance/611146795?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/dont-let-me-down-poolside-remix-single/1533482688?uo=4",
-      artworkUrl60:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/f0/8e/3d/f08e3dd1-2766-449b-1eb1-e8fd15bd2d56/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/f0/8e/3d/f08e3dd1-2766-449b-1eb1-e8fd15bd2d56/source/100x100bb.jpg",
-      collectionPrice: 1.29,
-      collectionExplicitness: "notExplicit",
-      trackCount: 1,
-      copyright:
-        "℗ 2020 Muggelig Records GmbH under exclusive license to BMG Rights Management (US) LLC",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2020-10-16T07:00:00Z",
-      primaryGenreName: "Electronic",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 611146795,
-      collectionId: 1509557361,
-      amgArtistId: 2863420,
-      artistName: "Milky Chance & Jack Johnson",
-      collectionName: "Don't Let Me Down - Single",
-      collectionCensoredName: "Don't Let Me Down - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/milky-chance/611146795?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/dont-let-me-down-single/1509557361?uo=4",
-      artworkUrl60:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music125/v4/8e/3a/ab/8e3aab46-81c1-d8ee-895b-7aab405cd061/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music125/v4/8e/3a/ab/8e3aab46-81c1-d8ee-895b-7aab405cd061/source/100x100bb.jpg",
-      collectionPrice: 1.29,
-      collectionExplicitness: "notExplicit",
-      trackCount: 1,
-      copyright:
-        "℗ 2020 Muggelig Records GmbH under exclusive license to BMG Rights Management (US) LLC",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2020-05-01T07:00:00Z",
-      primaryGenreName: "Alternative",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 259716390,
-      collectionId: 1435555662,
-      amgArtistId: 900799,
-      artistName: "John Craigie",
-      collectionName:
-        "I Wrote Mr. Tambourine Man (Live) [feat. Jack Johnson] - Single",
-      collectionCensoredName:
-        "I Wrote Mr. Tambourine Man (Live) [feat. Jack Johnson] - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/john-craigie/259716390?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/i-wrote-mr-tambourine-man-live-feat-jack-johnson-single/1435555662?uo=4",
-      artworkUrl60:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music118/v4/87/53/a4/8753a445-c627-a1d6-08ef-5d23e8ca3c62/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is3-ssl.mzstatic.com/image/thumb/Music118/v4/87/53/a4/8753a445-c627-a1d6-08ef-5d23e8ca3c62/source/100x100bb.jpg",
-      collectionPrice: 0.99,
-      collectionExplicitness: "explicit",
-      contentAdvisoryRating: "Explicit",
-      trackCount: 1,
-      copyright: "℗ 2018 Zabriskie Point Records",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2018-09-28T07:00:00Z",
-      primaryGenreName: "Folk",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 272783448,
-      collectionId: 663930937,
-      artistName: "Manuel Garcia, Silvia Tómas, Jack Johnson & Paula Fuga",
-      collectionName: 'Farewell (From "El Mar, Mi Alma") - Single',
-      collectionCensoredName: 'Farewell (From "El Mar, Mi Alma") - Single',
-      artistViewUrl:
-        "https://books.apple.com/us/author/manuel-garcia/id272783448?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/farewell-from-el-mar-mi-alma-single/663930937?uo=4",
-      artworkUrl60:
-        "https://is4-ssl.mzstatic.com/image/thumb/Music114/v4/db/b3/2b/dbb32be8-78f7-3f78-25f4-d605c8051c32/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is4-ssl.mzstatic.com/image/thumb/Music114/v4/db/b3/2b/dbb32be8-78f7-3f78-25f4-d605c8051c32/source/100x100bb.jpg",
-      collectionPrice: 0.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 1,
-      copyright: "℗ 2013 Rebel Waltz Films",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2013-04-02T07:00:00Z",
-      primaryGenreName: "Soundtrack",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1452917636,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Upside Down - Single",
-      collectionCensoredName: "Upside Down - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/upside-down-single/1452917636?uo=4",
-      artworkUrl60:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music114/v4/ef/c7/06/efc70698-3ee2-8d53-00b1-00e12593bcac/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music114/v4/ef/c7/06/efc70698-3ee2-8d53-00b1-00e12593bcac/source/100x100bb.jpg",
-      collectionPrice: 2.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 3,
-      copyright: "A Republic Records release; ℗ 2006 UMG Recordings, Inc.",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2006-02-24T08:00:00Z",
-      primaryGenreName: "Pop",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1444849318,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "At or With Me (Born Weakling Remix) - Single",
-      collectionCensoredName: "At or With Me (Born Weakling Remix) - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/at-or-with-me-born-weakling-remix-single/1444849318?uo=4",
-      artworkUrl60:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music118/v4/c4/c6/4d/c4c64d11-fc45-1bf8-7573-aca4d3d97209/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is5-ssl.mzstatic.com/image/thumb/Music118/v4/c4/c6/4d/c4c64d11-fc45-1bf8-7573-aca4d3d97209/source/100x100bb.jpg",
-      collectionPrice: 0.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 1,
-      copyright: "℗ 2010 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2010-01-01T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 66834334,
-      collectionId: 525958892,
-      amgArtistId: 97745,
-      artistName: "Ted Lennon",
-      collectionName:
-        "So in Love (Acoustic Remix) [feat. Jack Johnson & Colbie Caillat] - Single",
-      collectionCensoredName:
-        "So in Love (Acoustic Remix) [feat. Jack Johnson & Colbie Caillat] - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/ted-lennon/66834334?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/so-in-love-acoustic-remix-feat-jack-johnson-colbie/525958892?uo=4",
-      artworkUrl60:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music/v4/ff/d6/10/ffd610d2-b3b4-8427-3e25-c79e3022aa44/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music/v4/ff/d6/10/ffd610d2-b3b4-8427-3e25-c79e3022aa44/source/100x100bb.jpg",
-      collectionPrice: 0.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 1,
-      copyright: "℗ 2012 Ted Lennon",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2012-05-11T07:00:00Z",
-      primaryGenreName: "Pop",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 772111884,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson & The Roots",
-      collectionName:
-        "Rudolph the Red Nosed Reindeer (Live from Late Night with Jimmy Fallon) - Single",
-      collectionCensoredName:
-        "Rudolph the Red Nosed Reindeer (Live from Late Night with Jimmy Fallon) - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/rudolph-the-red-nosed-reindeer-live-from-late-night/772111884?uo=4",
-      artworkUrl60:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/b8/60/7f/b8607fd0-cb77-27fb-1798-405dfd45cdea/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/b8/60/7f/b8607fd0-cb77-27fb-1798-405dfd45cdea/source/100x100bb.jpg",
-      collectionPrice: 0.99,
-      collectionExplicitness: "notExplicit",
-      trackCount: 1,
-      copyright: "℗ 2013 Brushfire Records",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2013-12-10T08:00:00Z",
-      primaryGenreName: "Holiday",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1370657288,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Willie Got Me Stoned (Live) - Single",
-      collectionCensoredName: "Willie Got Me Stoned (Live) - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/willie-got-me-stoned-live-single/1370657288?uo=4",
-      artworkUrl60:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/b9/c6/bb/b9c6bba2-922f-20e4-3361-b43f2263fc02/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/b9/c6/bb/b9c6bba2-922f-20e4-3361-b43f2263fc02/source/100x100bb.jpg",
-      collectionPrice: 1.29,
-      collectionExplicitness: "notExplicit",
-      trackCount: 1,
-      copyright: "℗ 2018 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2018-04-20T07:00:00Z",
-      primaryGenreName: "Singer/Songwriter",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1445305965,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Seasick Dream - Single",
-      collectionCensoredName: "Seasick Dream - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/seasick-dream-single/1445305965?uo=4",
-      artworkUrl60:
-        "https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/2f/4f/cd/2f4fcd27-4562-214c-7aba-66c23723978d/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/2f/4f/cd/2f4fcd27-4562-214c-7aba-66c23723978d/source/100x100bb.jpg",
-      collectionPrice: 1.29,
-      collectionExplicitness: "notExplicit",
-      trackCount: 1,
-      copyright: "℗ 2015 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2015-12-01T08:00:00Z",
-      primaryGenreName: "Singer/Songwriter",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1444289947,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Wasting Time - Single",
-      collectionCensoredName: "Wasting Time - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/wasting-time-single/1444289947?uo=4",
-      artworkUrl60:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music128/v4/de/b1/66/deb1662a-5d8a-47e8-f8e2-bf2e80f5be3d/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is2-ssl.mzstatic.com/image/thumb/Music128/v4/de/b1/66/deb1662a-5d8a-47e8-f8e2-bf2e80f5be3d/source/100x100bb.jpg",
-      collectionExplicitness: "notExplicit",
-      trackCount: 2,
-      copyright:
-        "This Compilation ℗ 2006 Universal Music International Division, a division of Universal Music GmbH",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2006-01-01T08:00:00Z",
-      primaryGenreName: "Pop",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 159380642,
-      collectionId: 1561379119,
-      amgArtistId: 780485,
-      artistName: "Paula Fuga, Jack Johnson & Ben Harper",
-      collectionName: "If Ever - Single",
-      collectionCensoredName: "If Ever - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/paula-fuga/159380642?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/if-ever-single/1561379119?uo=4",
-      artworkUrl60:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cd/e3/7e/cde37eb8-5d60-8e08-6e4d-63544c77f2ab/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cd/e3/7e/cde37eb8-5d60-8e08-6e4d-63544c77f2ab/source/100x100bb.jpg",
-      collectionPrice: 1.29,
-      collectionExplicitness: "notExplicit",
-      trackCount: 1,
-      copyright: "℗ 2021 Brushfire Records",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2021-04-16T07:00:00Z",
-      primaryGenreName: "Singer/Songwriter",
-    },
-    {
-      wrapperType: "collection",
-      collectionType: "Album",
-      artistId: 909253,
-      collectionId: 1445005147,
-      amgArtistId: 468749,
-      artistName: "Jack Johnson",
-      collectionName: "Live at the Kokua Festival - Single",
-      collectionCensoredName: "Live at the Kokua Festival - Single",
-      artistViewUrl:
-        "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
-      collectionViewUrl:
-        "https://music.apple.com/us/album/live-at-the-kokua-festival-single/1445005147?uo=4",
-      artworkUrl60:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/7a/78/56/7a78567f-233f-c722-5ff0-3fd965ac0375/source/60x60bb.jpg",
-      artworkUrl100:
-        "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/7a/78/56/7a78567f-233f-c722-5ff0-3fd965ac0375/source/100x100bb.jpg",
-      collectionPrice: 1.98,
-      collectionExplicitness: "notExplicit",
-      trackCount: 2,
-      copyright: "℗ 2005 Jack Johnson",
-      country: "USA",
-      currency: "USD",
-      releaseDate: "2005-01-01T08:00:00Z",
-      primaryGenreName: "Rock",
-    },
-  ],
-};
+const dummyData: any = [
+  {
+    wrapperType: "artist",
+    artistType: "Artist",
+    artistName: "U2",
+    artistLinkUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    artistId: 78500,
+    amgArtistId: 5723,
+    primaryGenreName: "Rock",
+    primaryGenreId: 21,
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1442959667,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "No Line on the Horizon",
+    collectionCensoredName: "No Line on the Horizon",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/no-line-on-the-horizon/1442959667?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/04/56/73/04567328-c82e-bc18-2174-eb862e53fabb/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/04/56/73/04567328-c82e-bc18-2174-eb862e53fabb/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 13,
+    copyright:
+      "℗ 2009 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2009-02-27T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1443155637,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "The Joshua Tree",
+    collectionCensoredName: "The Joshua Tree",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-joshua-tree/1443155637?uo=4",
+    artworkUrl60:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music115/v4/83/2f/4b/832f4b89-69eb-7c16-41c1-50e6345c7f54/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music115/v4/83/2f/4b/832f4b89-69eb-7c16-41c1-50e6345c7f54/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 12,
+    copyright:
+      "℗ 2007 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1987-03-03T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 36270,
+    collectionId: 1487549700,
+    artistName: "Various Artists",
+    collectionName: "A Very Special Christmas",
+    collectionCensoredName: "A Very Special Christmas",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/a-very-special-christmas/1487549700?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music114/v4/7c/12/53/7c125374-0796-7d8c-ff0c-693bfc8390d3/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music114/v4/7c/12/53/7c125374-0796-7d8c-ff0c-693bfc8390d3/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 15,
+    copyright:
+      "An A&M Records release; This Compilation ℗ 1987 UMG Recordings, Inc.",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1987-10-20T07:00:00Z",
+    primaryGenreName: "Christmas",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440894594,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "The Best of 1980-1990",
+    collectionCensoredName: "The Best of 1980-1990",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-best-of-1980-1990/1440894594?uo=4",
+    artworkUrl60:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music115/v4/42/91/dc/4291dc31-13f3-64e1-aa99-9aefd7cf566d/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music115/v4/42/91/dc/4291dc31-13f3-64e1-aa99-9aefd7cf566d/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 15,
+    copyright:
+      "This Compilation ℗ 1998 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1998-11-02T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1442801732,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Rattle and Hum",
+    collectionCensoredName: "Rattle and Hum",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/rattle-and-hum/1442801732?uo=4",
+    artworkUrl60:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music115/v4/fc/73/a0/fc73a081-c7b3-9705-e71a-5f10e5cd65f7/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music115/v4/fc/73/a0/fc73a081-c7b3-9705-e71a-5f10e5cd65f7/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 18,
+    copyright:
+      "This Compilation ℗ 2017 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1988-10-10T07:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1443205068,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Songs of Experience (Deluxe Edition)",
+    collectionCensoredName: "Songs of Experience (Deluxe Edition)",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/songs-of-experience-deluxe-edition/1443205068?uo=4",
+    artworkUrl60:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/8e/38/0a/8e380a3d-3eee-9448-3bca-b2b8c2affd3d/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/8e/38/0a/8e380a3d-3eee-9448-3bca-b2b8c2affd3d/source/100x100bb.jpg",
+    collectionPrice: 14.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 18,
+    copyright:
+      "An Island Records Release; ℗ 2017 Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2017-12-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440744915,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Live from Paris",
+    collectionCensoredName: "Live from Paris",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/live-from-paris/1440744915?uo=4",
+    artworkUrl60:
+      "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/b4/df/bb/b4dfbb7f-fc09-c9d6-f029-78e74192d878/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/b4/df/bb/b4dfbb7f-fc09-c9d6-f029-78e74192d878/source/100x100bb.jpg",
+    collectionPrice: 11.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 18,
+    copyright:
+      "℗ 2008 Universal-Island Records Ltd., under exclusive licence to Mercury Records Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2008-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440812617,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Songs of Innocence",
+    collectionCensoredName: "Songs of Innocence",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/songs-of-innocence/1440812617?uo=4",
+    artworkUrl60:
+      "https://is2-ssl.mzstatic.com/image/thumb/Music116/v4/79/3a/cc/793accda-1beb-3636-24f9-dddc3b1bb472/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is2-ssl.mzstatic.com/image/thumb/Music116/v4/79/3a/cc/793accda-1beb-3636-24f9-dddc3b1bb472/source/100x100bb.jpg",
+    collectionPrice: 7.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 11,
+    copyright:
+      "℗ 2014 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2014-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440884549,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Under a Blood Red Sky (Live)",
+    collectionCensoredName: "Under a Blood Red Sky (Live)",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/under-a-blood-red-sky-live/1440884549?uo=4",
+    artworkUrl60:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music115/v4/2b/19/50/2b195096-fe76-7052-a906-e18507d2c62e/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music115/v4/2b/19/50/2b195096-fe76-7052-a906-e18507d2c62e/source/100x100bb.jpg",
+    collectionPrice: 7.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 9,
+    copyright:
+      "℗ 2008 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1983-11-07T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1444843331,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Wide Awake In America - EP",
+    collectionCensoredName: "Wide Awake In America - EP",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/wide-awake-in-america-ep/1444843331?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/88/ed/2f/88ed2f28-8991-ae98-49b9-a8d1cbb15da8/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/88/ed/2f/88ed2f28-8991-ae98-49b9-a8d1cbb15da8/source/100x100bb.jpg",
+    collectionPrice: 3.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 5,
+    copyright:
+      "℗ 2009 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1985-06-10T07:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440808807,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName:
+      "Achtung Baby (20th Anniversary Deluxe Edition) [2011 Remaster]",
+    collectionCensoredName:
+      "Achtung Baby (20th Anniversary Deluxe Edition) [2011 Remaster]",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/achtung-baby-20th-anniversary-deluxe-edition-2011-remaster/1440808807?uo=4",
+    artworkUrl60:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music115/v4/51/89/04/518904a2-c1ba-809a-1d91-e4ffe55cb427/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music115/v4/51/89/04/518904a2-c1ba-809a-1d91-e4ffe55cb427/source/100x100bb.jpg",
+    collectionPrice: 14.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 26,
+    copyright:
+      "℗ 2011 Universal-Island Records Limited under exclusive licence to Mercury Records Limited in the UK, Interscope Records in the US and Universal Music Group for the rest of the world",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1991-11-18T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440731607,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "The Unforgettable Fire (Deluxe Version) [Remastered]",
+    collectionCensoredName:
+      "The Unforgettable Fire (Deluxe Version) [Remastered]",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-unforgettable-fire-deluxe-version-remastered/1440731607?uo=4",
+    artworkUrl60:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music125/v4/fc/a0/ee/fca0ee47-c69e-6c9a-ba17-783b7d10ea49/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music125/v4/fc/a0/ee/fca0ee47-c69e-6c9a-ba17-783b7d10ea49/source/100x100bb.jpg",
+    collectionPrice: 14.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 27,
+    copyright:
+      "℗ 2009 Universal-Island Records Limited under exclusive licence to Mercury Records Limited in the UK, Interscope Records in the US and Universal Music Group for the rest of the world",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2009-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1442950015,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName:
+      "The Joshua Tree (30th Anniversary Super Deluxe Edition) [2017 Remaster]",
+    collectionCensoredName:
+      "The Joshua Tree (30th Anniversary Super Deluxe Edition) [2017 Remaster]",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-joshua-tree-30th-anniversary-super-deluxe-edition/1442950015?uo=4",
+    artworkUrl60:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/4f/31/0f/4f310fee-aec7-6f2d-eaf2-ded044a937a2/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/4f/31/0f/4f310fee-aec7-6f2d-eaf2-ded044a937a2/source/100x100bb.jpg",
+    collectionPrice: 24.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 50,
+    copyright:
+      "This Compilation ℗ 2017 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1987-03-03T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1443189101,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Boy",
+    collectionCensoredName: "Boy",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl: "https://music.apple.com/us/album/boy/1443189101?uo=4",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/33/d4/7e/33d47e48-7016-8a21-d8a0-e4e06a41ab38/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/33/d4/7e/33d47e48-7016-8a21-d8a0-e4e06a41ab38/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 12,
+    copyright:
+      "℗ 2008 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1980-10-20T07:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440746337,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "War (Deluxe Edition) [2008 Remaster]",
+    collectionCensoredName: "War (Deluxe Edition) [2008 Remaster]",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/war-deluxe-edition-2008-remaster/1440746337?uo=4",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/43/37/76/433776e0-9999-e88b-7659-206bc258514b/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/43/37/76/433776e0-9999-e88b-7659-206bc258514b/source/100x100bb.jpg",
+    collectionPrice: 14.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 22,
+    copyright:
+      "℗ 2008 Universal-Island Records Ltd., under exclusive licence to Mercury Records Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2008-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1443063058,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Achtung Baby",
+    collectionCensoredName: "Achtung Baby",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/achtung-baby/1443063058?uo=4",
+    artworkUrl60:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/ff/9e/04/ff9e041c-f092-6b77-9e2d-b6374e8776ed/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/ff/9e/04/ff9e041c-f092-6b77-9e2d-b6374e8776ed/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 13,
+    copyright:
+      "℗ 2011 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1991-11-18T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440793935,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Boy (Deluxe Edition) [Remastered]",
+    collectionCensoredName: "Boy (Deluxe Edition) [Remastered]",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/boy-deluxe-edition-remastered/1440793935?uo=4",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1b/20/99/1b20999f-993e-39a5-4e4f-4d4f52f8ed9d/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1b/20/99/1b20999f-993e-39a5-4e4f-4d4f52f8ed9d/source/100x100bb.jpg",
+    collectionPrice: 14.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 25,
+    copyright: "℗ 2008 Universal-Island Records Ltd.",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2008-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1443100430,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "All That You Can't Leave Behind",
+    collectionCensoredName: "All That You Can't Leave Behind",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/all-that-you-cant-leave-behind/1443100430?uo=4",
+    artworkUrl60:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music125/v4/96/55/16/9655160b-32fb-46b4-80b4-ecd6fa8a7802/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music125/v4/96/55/16/9655160b-32fb-46b4-80b4-ecd6fa8a7802/source/100x100bb.jpg",
+    collectionPrice: 6.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 13,
+    copyright:
+      "℗ 2017 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2000-10-30T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1443185630,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Songs of Experience",
+    collectionCensoredName: "Songs of Experience",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/songs-of-experience/1443185630?uo=4",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2f/10/b8/2f10b83e-dba3-1ddb-55e1-472a74905128/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2f/10/b8/2f10b83e-dba3-1ddb-55e1-472a74905128/source/100x100bb.jpg",
+    collectionPrice: 11.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 14,
+    copyright:
+      "An Island Records Release; ℗ 2017 Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2017-12-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1442884982,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName:
+      "The Joshua Tree (30th Anniversary Deluxe Edition) [2017 Remaster]",
+    collectionCensoredName:
+      "The Joshua Tree (30th Anniversary Deluxe Edition) [2017 Remaster]",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-joshua-tree-30th-anniversary-deluxe-edition-2017/1442884982?uo=4",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/01/65/6a/01656abc-e253-67d7-1a74-84abe6d57661/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/01/65/6a/01656abc-e253-67d7-1a74-84abe6d57661/source/100x100bb.jpg",
+    collectionPrice: 14.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 29,
+    copyright:
+      "This Compilation ℗ 2017 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1987-03-03T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440745557,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "October (Deluxe Edition) [Remastered]",
+    collectionCensoredName: "October (Deluxe Edition) [Remastered]",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/october-deluxe-edition-remastered/1440745557?uo=4",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/96/d8/5d/96d85dfb-4f2c-e578-40fa-06d42462b524/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/96/d8/5d/96d85dfb-4f2c-e578-40fa-06d42462b524/source/100x100bb.jpg",
+    collectionPrice: 15.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 28,
+    copyright:
+      "℗ 2008 Universal-Island Records Ltd., under exclusive licence to Mercury Records Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2008-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440851755,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Songs of Innocence (Deluxe Edition)",
+    collectionCensoredName: "Songs of Innocence (Deluxe Edition)",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/songs-of-innocence-deluxe-edition/1440851755?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/92/4b/97/924b9759-a15b-488a-4de5-6f918d6f61c8/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/92/4b/97/924b9759-a15b-488a-4de5-6f918d6f61c8/source/100x100bb.jpg",
+    collectionPrice: 16.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 22,
+    copyright:
+      "℗ 2014 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2014-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1445146491,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Magnificent (Remixes) - EP",
+    collectionCensoredName: "Magnificent (Remixes) - EP",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/magnificent-remixes-ep/1445146491?uo=4",
+    artworkUrl60:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/c5/c7/c6/c5c7c682-494d-0082-1486-99b9e3aee8e3/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/c5/c7/c6/c5c7c682-494d-0082-1486-99b9e3aee8e3/source/100x100bb.jpg",
+    collectionPrice: 3.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 5,
+    copyright:
+      "℗ 2009 Universal-Island Records Ltd., under exclusive licence to Universal Music International BV",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2009-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440655963,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "The Best of 1990-2000",
+    collectionCensoredName: "The Best of 1990-2000",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-best-of-1990-2000/1440655963?uo=4",
+    artworkUrl60:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/52/8b/fd/528bfddc-259a-764e-eb05-6d3190aa347c/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/52/8b/fd/528bfddc-259a-764e-eb05-6d3190aa347c/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 16,
+    copyright: "This Compilation ℗ 2002 Universal International Music B.V.",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2002-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440894470,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "War",
+    collectionCensoredName: "War",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl: "https://music.apple.com/us/album/war/1440894470?uo=4",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/7b/25/47/7b254742-adf4-53f2-f941-901f14310112/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/7b/25/47/7b254742-adf4-53f2-f941-901f14310112/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 11,
+    copyright:
+      "℗ 2008 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1983-02-28T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1445314026,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "If God Will Send His Angels - EP",
+    collectionCensoredName: "If God Will Send His Angels - EP",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/if-god-will-send-his-angels-ep/1445314026?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/cf/bf/60/cfbf6051-6b97-76c7-1b4d-789050a1212f/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/cf/bf/60/cfbf6051-6b97-76c7-1b4d-789050a1212f/source/100x100bb.jpg",
+    collectionPrice: 3.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 4,
+    copyright: "℗ 1997 Universal-Island Records Ltd.",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1997-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1445667357,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "U218 Singles",
+    collectionCensoredName: "U218 Singles",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/u218-singles/1445667357?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/a5/60/5e/a5605e1f-5ed9-f0d1-1028-7760026b0fd9/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/a5/60/5e/a5605e1f-5ed9-f0d1-1028-7760026b0fd9/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 20,
+    copyright:
+      "℗ 2017 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2006-11-21T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1445857868,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "I'll Go Crazy If I Don't Go Crazy Tonight - EP",
+    collectionCensoredName: "I'll Go Crazy If I Don't Go Crazy Tonight - EP",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/ill-go-crazy-if-i-dont-go-crazy-tonight-ep/1445857868?uo=4",
+    artworkUrl60:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/ad/b3/9d/adb39de6-0070-0b6d-3bed-d43de960b49e/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/ad/b3/9d/adb39de6-0070-0b6d-3bed-d43de960b49e/source/100x100bb.jpg",
+    collectionPrice: 7.99,
+    collectionExplicitness: "cleaned",
+    contentAdvisoryRating: "Clean",
+    trackCount: 9,
+    copyright: "℗ 2009 Universal-Island Records Ltd.",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2009-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1444749940,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Songs of Innocence",
+    collectionCensoredName: "Songs of Innocence",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/songs-of-innocence/1444749940?uo=4",
+    artworkUrl60:
+      "https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/07/1f/5c/071f5c8e-9c0b-563c-0d0c-9891614bdca3/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/07/1f/5c/071f5c8e-9c0b-563c-0d0c-9891614bdca3/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 12,
+    copyright:
+      "℗ 2017 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2014-09-09T07:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1443184272,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "The Unforgettable Fire",
+    collectionCensoredName: "The Unforgettable Fire",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-unforgettable-fire/1443184272?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/b4/b1/05/b4b10547-bb7d-d279-c80b-8ff265b1e5fb/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/b4/b1/05/b4b10547-bb7d-d279-c80b-8ff265b1e5fb/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 11,
+    copyright:
+      "℗ 2009 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1984-10-01T07:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1442968012,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Zooropa",
+    collectionCensoredName: "Zooropa",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/zooropa/1442968012?uo=4",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ad/42/20/ad42207e-6a58-3962-ca77-cf2e1b3fbb7b/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ad/42/20/ad42207e-6a58-3962-ca77-cf2e1b3fbb7b/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 11,
+    copyright:
+      "℗ 2011 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1993-07-05T07:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1530603399,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName:
+      "All That You Can't Leave Behind (20th Anniversary Super Deluxe Edition) [2020 Remaster]",
+    collectionCensoredName:
+      "All That You Can't Leave Behind (20th Anniversary Super Deluxe Edition) [2020 Remaster]",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/all-that-you-cant-leave-behind-20th-anniversary-super/1530603399?uo=4",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/99/c5/fd/99c5fd8e-7312-a64c-ee3c-2aca96e86b70/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/99/c5/fd/99c5fd8e-7312-a64c-ee3c-2aca96e86b70/source/100x100bb.jpg",
+    collectionPrice: 29.99,
+    collectionExplicitness: "explicit",
+    contentAdvisoryRating: "Explicit",
+    trackCount: 51,
+    copyright:
+      "An Island Records release; ℗ 2020 Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2000-10-30T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440891249,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "How To Dismantle an Atomic Bomb",
+    collectionCensoredName: "How To Dismantle an Atomic Bomb",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/how-to-dismantle-an-atomic-bomb/1440891249?uo=4",
+    artworkUrl60:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/99/52/7e/99527e1a-9818-420b-18d8-f57ba011df38/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/99/52/7e/99527e1a-9818-420b-18d8-f57ba011df38/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 13,
+    copyright:
+      "℗ 2004 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2004-11-22T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1443144590,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "October",
+    collectionCensoredName: "October",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/october/1443144590?uo=4",
+    artworkUrl60:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music125/v4/0c/fa/7d/0cfa7d79-d6c1-9aad-76f5-55be8ed334fc/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music125/v4/0c/fa/7d/0cfa7d79-d6c1-9aad-76f5-55be8ed334fc/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 12,
+    copyright:
+      "℗ 2008 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1981-10-12T07:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1442904533,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Pop",
+    collectionCensoredName: "Pop",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl: "https://music.apple.com/us/album/pop/1442904533?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/85/54/66/855466a1-52dd-94e0-2f0b-c0a10febdf05/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/85/54/66/855466a1-52dd-94e0-2f0b-c0a10febdf05/source/100x100bb.jpg",
+    collectionPrice: 9.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 13,
+    copyright:
+      "℗ 2017 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1997-03-03T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1469571342,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Vertigo - Single",
+    collectionCensoredName: "Vertigo - Single",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/vertigo-single/1469571342?uo=4",
+    artworkUrl60:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music113/v4/d7/99/f6/d799f6c4-0b51-61d5-dbcb-a5f8ed019a74/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music113/v4/d7/99/f6/d799f6c4-0b51-61d5-dbcb-a5f8ed019a74/source/100x100bb.jpg",
+    collectionPrice: 0.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 1,
+    copyright: "℗ 2004 Universal-Island Records Ltd.",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2004-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440881975,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "The Best of 1980-1990 & B-Sides",
+    collectionCensoredName: "The Best of 1980-1990 & B-Sides",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-best-of-1980-1990-b-sides/1440881975?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/8a/61/3f/8a613f9e-493a-969a-b41c-60af76db490d/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/8a/61/3f/8a613f9e-493a-969a-b41c-60af76db490d/source/100x100bb.jpg",
+    collectionPrice: 14.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 30,
+    copyright:
+      "This Compilation ℗ 1998 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1998-11-02T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1593009205,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Achtung Baby (30th Anniversary Edition)",
+    collectionCensoredName: "Achtung Baby (30th Anniversary Edition)",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/achtung-baby-30th-anniversary-edition/1593009205?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/62/9d/c1/629dc1c8-97b4-b408-9733-98f7bb418c0c/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/62/9d/c1/629dc1c8-97b4-b408-9733-98f7bb418c0c/source/100x100bb.jpg",
+    collectionPrice: 34.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 50,
+    copyright:
+      "An Island Records release; ℗ 2021 Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1991-11-18T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1420015652,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Summer of Love (Remixes) - Single",
+    collectionCensoredName: "Summer of Love (Remixes) - Single",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/summer-of-love-remixes-single/1420015652?uo=4",
+    artworkUrl60:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music118/v4/d9/b5/0d/d9b50d23-5dc0-7686-5939-0638c53d70b2/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music118/v4/d9/b5/0d/d9b50d23-5dc0-7686-5939-0638c53d70b2/source/100x100bb.jpg",
+    collectionPrice: 3.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 4,
+    copyright:
+      "An Island Records Release; ℗ 2018 Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2018-08-10T07:00:00Z",
+    primaryGenreName: "Dance",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1557932981,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName:
+      "The Virtual Road – U2 Go Home: Live From Slane Castle Ireland EP (Remastered 2021)",
+    collectionCensoredName:
+      "The Virtual Road – U2 Go Home: Live From Slane Castle Ireland EP (Remastered 2021)",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-virtual-road-u2-go-home-live-from-slane-castle/1557932981?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music114/v4/e4/1a/ad/e41aadaa-b9e1-670a-c985-7d62ea1c6e73/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music114/v4/e4/1a/ad/e41aadaa-b9e1-670a-c985-7d62ea1c6e73/source/100x100bb.jpg",
+    collectionPrice: 3.99,
+    collectionExplicitness: "explicit",
+    contentAdvisoryRating: "Explicit",
+    trackCount: 4,
+    copyright:
+      "An Island Records release; ℗ 2021 Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2021-03-17T07:00:00Z",
+    primaryGenreName: "Pop",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1558157540,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName:
+      "The Virtual Road – Live At Red Rocks: Under A Blood Red Sky EP (Remastered 2021)",
+    collectionCensoredName:
+      "The Virtual Road – Live At Red Rocks: Under A Blood Red Sky EP (Remastered 2021)",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-virtual-road-live-at-red-rocks-under-a-blood/1558157540?uo=4",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/7f/48/90/7f4890f7-e7d7-ea90-44ff-cde45394a3cf/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/7f/48/90/7f4890f7-e7d7-ea90-44ff-cde45394a3cf/source/100x100bb.jpg",
+    collectionPrice: 3.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 4,
+    copyright:
+      "An Island Records release; ℗ 2021 Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2021-03-25T07:00:00Z",
+    primaryGenreName: "Pop",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1388900339,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName:
+      "Love Is Bigger Than Anything In Its Way (Beck Remix) - Single",
+    collectionCensoredName:
+      "Love Is Bigger Than Anything In Its Way (Beck Remix) - Single",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/love-is-bigger-than-anything-in-its-way-beck-remix-single/1388900339?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/c4/21/88/c4218840-c1ef-cf1e-c422-627b2997c47d/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/c4/21/88/c4218840-c1ef-cf1e-c422-627b2997c47d/source/100x100bb.jpg",
+    collectionPrice: 1.29,
+    collectionExplicitness: "notExplicit",
+    trackCount: 1,
+    copyright:
+      "An Island Records Release; ℗ 2018 Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2018-06-01T07:00:00Z",
+    primaryGenreName: "Dance",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1440729856,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "U218 Singles (Deluxe Edition)",
+    collectionCensoredName: "U218 Singles (Deluxe Edition)",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/u218-singles-deluxe-edition/1440729856?uo=4",
+    artworkUrl60:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/bf/15/9b/bf159be9-12c0-ec64-bf73-58188cdb339e/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/bf/15/9b/bf159be9-12c0-ec64-bf73-58188cdb339e/source/100x100bb.jpg",
+    collectionPrice: 16.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 27,
+    copyright: "℗ 2006 Universal-Island Records Ltd.",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2006-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1490091021,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "The Eternal Remixes - EP",
+    collectionCensoredName: "The Eternal Remixes - EP",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-eternal-remixes-ep/1490091021?uo=4",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/73/ad/06/73ad06bc-e849-e855-9b75-9520fbfeabce/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/73/ad/06/73ad06bc-e849-e855-9b75-9520fbfeabce/source/100x100bb.jpg",
+    collectionPrice: 3.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 4,
+    copyright:
+      "An Island Records Release; ℗ 2019 Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2019-12-06T08:00:00Z",
+    primaryGenreName: "Dance",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1446736788,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "The Best of 1990-2000 & B-Sides",
+    collectionCensoredName: "The Best of 1990-2000 & B-Sides",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-best-of-1990-2000-b-sides/1446736788?uo=4",
+    artworkUrl60:
+      "https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/02/9f/35/029f35ff-8cbd-0fff-f225-2f04aa042da5/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/02/9f/35/029f35ff-8cbd-0fff-f225-2f04aa042da5/source/100x100bb.jpg",
+    collectionPrice: 14.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 31,
+    copyright:
+      "This Compilation ℗ 2017 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2002-11-05T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1560500430,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName:
+      "The Virtual Road – iNNOCENCE + eXPERIENCE Live In Paris EP (Remastered 2021)",
+    collectionCensoredName:
+      "The Virtual Road – iNNOCENCE + eXPERIENCE Live In Paris EP (Remastered 2021)",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/the-virtual-road-innocence-experience-live-in-paris/1560500430?uo=4",
+    artworkUrl60:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/80/91/ed/8091edf3-288b-8c48-1840-cf813ccc65a9/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/80/91/ed/8091edf3-288b-8c48-1840-cf813ccc65a9/source/100x100bb.jpg",
+    collectionPrice: 3.99,
+    collectionExplicitness: "explicit",
+    contentAdvisoryRating: "Explicit",
+    trackCount: 4,
+    copyright:
+      "An Island Records release; ℗ 2021 Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2021-04-10T07:00:00Z",
+    primaryGenreName: "Pop",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1441715438,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Summer of Love (Club Remixes) - EP",
+    collectionCensoredName: "Summer of Love (Club Remixes) - EP",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/summer-of-love-club-remixes-ep/1441715438?uo=4",
+    artworkUrl60:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music114/v4/c0/f2/07/c0f20707-7c90-e61e-1339-96fd794da9c6/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is5-ssl.mzstatic.com/image/thumb/Music114/v4/c0/f2/07/c0f20707-7c90-e61e-1339-96fd794da9c6/source/100x100bb.jpg",
+    collectionPrice: 3.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 4,
+    copyright:
+      "An Island Records Release; ℗ 2018 Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2018-11-23T08:00:00Z",
+    primaryGenreName: "Dance",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1444312890,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "Please - EP",
+    collectionCensoredName: "Please - EP",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/please-ep/1444312890?uo=4",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/95/b8/f7/95b8f729-37d2-70dd-83fb-c54462d90279/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/95/b8/f7/95b8f729-37d2-70dd-83fb-c54462d90279/source/100x100bb.jpg",
+    collectionPrice: 4.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 5,
+    copyright: "An Island Records Release; ℗ 1997 UMG Recordings, Inc.",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1997-09-22T07:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1530587909,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName:
+      "All That You Can't Leave Behind (20th Anniversary Edition / Deluxe / Remastered 2020)",
+    collectionCensoredName:
+      "All That You Can't Leave Behind (20th Anniversary Edition / Deluxe / Remastered 2020)",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/all-that-you-cant-leave-behind-20th-anniversary-edition/1530587909?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music114/v4/a1/1c/3f/a11c3f4f-2fd7-c6d9-e57b-1729b8350a01/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music114/v4/a1/1c/3f/a11c3f4f-2fd7-c6d9-e57b-1729b8350a01/source/100x100bb.jpg",
+    collectionPrice: 16.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 25,
+    copyright:
+      "An Island Records release; ℗ 2020 Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "2000-10-30T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+  {
+    wrapperType: "collection",
+    collectionType: "Album",
+    artistId: 78500,
+    collectionId: 1445168711,
+    amgArtistId: 5723,
+    artistName: "U2",
+    collectionName: "One - EP",
+    collectionCensoredName: "One - EP",
+    artistViewUrl: "https://music.apple.com/us/artist/u2/78500?uo=4",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/one-ep/1445168711?uo=4",
+    artworkUrl60:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/9f/8a/4c/9f8a4c45-b226-2c98-3646-75f9e143467e/source/60x60bb.jpg",
+    artworkUrl100:
+      "https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/9f/8a/4c/9f8a4c45-b226-2c98-3646-75f9e143467e/source/100x100bb.jpg",
+    collectionPrice: 3.99,
+    collectionExplicitness: "notExplicit",
+    trackCount: 4,
+    copyright:
+      "℗ 1992 Island Records, a division of Universal Music Operations Limited",
+    country: "USA",
+    currency: "USD",
+    releaseDate: "1992-01-01T08:00:00Z",
+    primaryGenreName: "Rock",
+  },
+];
 
 export default dummyData;

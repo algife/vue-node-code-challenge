@@ -7,7 +7,7 @@
     "start": "node dist/server.js",
     "prebuild": "npm run clean && npm run formatting",
     "formatting": "prettier --write src/",
-    "dev": "nodemon src/server.ts",
+    "serve": "nodemon src/server.ts",
     "watch": "tsc --watch",
     "build": "tsc",
     "clean": "rmdir /s /q dist && mkdir dist"

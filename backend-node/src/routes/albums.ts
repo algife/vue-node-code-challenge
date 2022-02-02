@@ -7,11 +7,14 @@ import notFoundHandler from "../controllers/not-found";
 const router = express.Router();
 
 // If we want to have a static public folder to display static files:
-router.get("/public", express.static(path.join(__dirname, "./public")));
+// ! STATIC ROUTES
+router.get("/", express.static(path.join(__dirname, "./public")));
 
-// The apiendpoint order matters
+// ! API ROUTES
+router.get("/artist/:artistId/albums", getAlbumsByArtistIdHandler);
+
+// ! Special Routes
 router.get("/", homePageHandler);
-router.get("/artist/:amgArtistId/albums", getAlbumsByArtistIdHandler);
 router.all("/**", notFoundHandler);
 
 export default router;

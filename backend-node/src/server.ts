@@ -1,10 +1,10 @@
 import http, { Server } from "http";
 import express, { Express } from "express";
 import morgan from "morgan";
-import routes from "./routes/albums";
+import apiRoutes from "./routes/albums";
 import corsPolicy from "./middleware/cors-policy";
 
-const PORT: any = process.env.PORT ?? 8080;
+const PORT: any = process.env.PORT ?? 5000;
 const app: Express = express();
 
 /* MIDDLEWARES */
@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(corsPolicy);
 
 // ! Routes
-app.use("/", routes);
+app.use("/api/v1", apiRoutes);
 
 // Server Initialization
 const httpServer: Server = http.createServer(app);
