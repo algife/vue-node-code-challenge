@@ -5,8 +5,6 @@
 Author: Alexandre Gimenez. Date: 1st February, 2022.
 Attached at the end is the Initial Coding Challenge description document "as-it-is" provided.
 
-> **STATUS**: Work In Progress
-
 ## Tech Stack Expertise required
 
 - **Back end**
@@ -35,7 +33,7 @@ Attached at the end is the Initial Coding Challenge description document "as-it-
 - [x] Integrate the iTunes Search API into the back-end
 - [x] Learning Vue.js for the very first time and create a boilerplate project
 - [x] Create a Vue.js SPA Front-end displaying the album's names and thumbnails in a grid
-- [ ] Create a filtering functionaly using a search box (without API requests)
+- [x] Create a filtering functionaly using a search box (without API requests)
 - [ ] Add Unit Testing to the task 1 and written explanations of the technical decissions
 - [ ] Learn about Vue.js Unit Testing and Add It to the project
 
@@ -52,14 +50,13 @@ Attached at the end is the Initial Coding Challenge description document "as-it-
 - [Vue.js 3 Documentation](https://v3.vuejs.org/guide/introduction.html)
 - [TraversyMedia's Vue.js Crash Course](https://www.youtube.com/watch?v=qZXt1Aom3Cs).
 
-## Next Potential Steps
+## Next Potential Improvements
 
-- Add Continuous Integration to the API
-- Deploy the API in AWS Lambda using Serverless Framework
 - Implement Vue Router
 - Implement Vue State Management
-- Implement Multiple Artists Search bar
-- Further might be considerated along the road
+- Implement Multiple Search Filters to search songs and other kind of collections from different Artists
+- Add Continuous Integration
+- Deploy the API in AWS Lambda using Serverless Framework
 
 ---
 
