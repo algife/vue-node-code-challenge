@@ -10,7 +10,7 @@
     "serve": "nodemon src/server.ts",
     "watch": "tsc --watch",
     "build": "tsc",
-    "clean": "rmdir /s /q dist && mkdir dist"
+    "clean": "rd /s /q dist >nul 2>&1|echo.>nul && mkdir dist"
   },
   "keywords": [],
   "author": "Alexandre Gimenez - Cooking Startups LTD.",
