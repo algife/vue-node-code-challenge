@@ -29,7 +29,7 @@ export default {
   ],
   props: {
     albums: Array,
-    // TO USE ON SEARCH  -- .filter(function (item) {return item.mensaje.match(/Foo/)})
+    // TO USE ON SEARCH -- .filter(function (item) {return item.mensaje.match(/Foo/)})
   },
   methods: {
     onAlbumCardClicked(){
