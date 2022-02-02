@@ -1,6 +1,6 @@
 import express from "express";
 import path from "path";
-import { getAlbumsHandler } from "../controllers/albums";
+import { getAlbumsByArtistIdHandler } from "../controllers/albums";
 import { homePageHandler } from "../controllers/general";
 import notFoundHandler from "../controllers/not-found";
 
@@ -11,7 +11,7 @@ router.get("/public", express.static(path.join(__dirname, "./public")));
 
 // The apiendpoint order matters
 router.get("/", homePageHandler);
-router.get("/albums", getAlbumsHandler);
+router.get("/artist/:amgArtistId/albums", getAlbumsByArtistIdHandler);
 router.all("/**", notFoundHandler);
 
 export default router;

@@ -1,10 +1,15 @@
-import { Request, Response, NextFunction } from "express";
-import { getFromiTunesSearchAPI } from "../helpers/itunes-search-api";
+import { Request, Response } from "express";
+import { iTunesLookUp } from "../helpers/itunes-search-api";
 
-export const getAlbumsHandler = async (_req: Request, _res: Response) => {
-  const result = await getFromiTunesSearchAPI(_req, _res);
+// as per requirements: It retrieves a list of albums for a SPECIFIED artist
+export const getAlbumsByArtistIdHandler = async (
+  req: Request,
+  res: Response
+) => {
+  const { amgArtistId } = req.params;
+  const { entity } = req.query;
 
-  console.log({ result });
+  const result = await iTunesLookUp(amgArtistId as string, entity as string);
 
-  return _res.status(200).json({ message: result });
+  return res.status(200).json({ data: result });
 };
