@@ -1,0 +1,1 @@
+This is a public static folder where we can upload static files to be exposed to the public if we wish

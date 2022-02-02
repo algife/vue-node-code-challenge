@@ -32,7 +32,7 @@ Attached at the end is the Initial Coding Challenge description document "as-it-
 
 - [x] Create the RESTful API
 - [x] Expose the endpoint to retrieve albums from the iTunes Search API
-- [ ] Integrate the iTunes Search API into the back-end
+- [x] Integrate the iTunes Search API into the back-end
 - [ ] Learning Vue.js for the very first time and create a boilerplate project
 - [ ] Create a Vue.js SPA Front-end displaying the album's names and thumbnails in a grid
 - [ ] Create a filtering functionaly using a search box (without API requests)
