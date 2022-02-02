@@ -1,6 +1,7 @@
-node_modules
-dist
-.notes
+**/node_modules
+**/dist
+**/package-lock.json
+**/.notes
 
 # local env files
 .env.local

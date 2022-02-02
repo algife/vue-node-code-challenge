@@ -1,0 +1,32 @@
+{
+  "name": "alexandre-coding-challenge",
+  "version": "1.0.0",
+  "description": "Coding Challenge by Alexandre Gimenez",
+  "main": "src/server.ts",
+  "scripts": {
+    "start": "node dist/server.js",
+    "prebuild": "npm run clean && npm run formatting",
+    "formatting": "prettier --write src/",
+    "dev": "nodemon src/server.ts",
+    "watch": "tsc --watch",
+    "build": "tsc",
+    "clean": "rmdir /s /q dist && mkdir dist"
+  },
+  "keywords": [],
+  "author": "Alexandre Gimenez - Cooking Startups LTD.",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "express": "^4.17.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "prettier": "^2.5.1",
+    "@types/axios": "^0.14.0",
+    "@types/express": "^4.17.13",
+    "@types/morgan": "^1.9.3"
+  }
+}
