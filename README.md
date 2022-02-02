@@ -33,8 +33,8 @@ Attached at the end is the Initial Coding Challenge description document "as-it-
 - [x] Create the RESTful API
 - [x] Expose the endpoint to retrieve albums from the iTunes Search API
 - [x] Integrate the iTunes Search API into the back-end
-- [ ] Learning Vue.js for the very first time and create a boilerplate project
-- [ ] Create a Vue.js SPA Front-end displaying the album's names and thumbnails in a grid
+- [x] Learning Vue.js for the very first time and create a boilerplate project
+- [x] Create a Vue.js SPA Front-end displaying the album's names and thumbnails in a grid
 - [ ] Create a filtering functionaly using a search box (without API requests)
 - [ ] Add Unit Testing to the task 1 and written explanations of the technical decissions
 - [ ] Learn about Vue.js Unit Testing and Add It to the project
