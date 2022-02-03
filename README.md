@@ -42,14 +42,13 @@ I have decided to apply **Git flow** to the git repository so there are multiple
 
 #### Roadmap for Task 2
 
-- [ ] Give written explanations/justifications for Task 2
-- [ ] Refactor the code accordingly
+- [x] Give written explanations/justifications for Task 2
+- [x] Refactor the code accordingly
 
 ## Challenges faced during the development
 
 1. I **never worked with Vue.js before so I have to learn enough quickly to meet the requirements** of this technical test. Useful resources:
 
-- [Vue.js 2 Documentation](https://vuejs.org/v2/guide/)
 - [Vue.js 3 Documentation](https://v3.vuejs.org/guide/introduction.html)
 - [TraversyMedia's Vue.js Crash Course](https://www.youtube.com/watch?v=qZXt1Aom3Cs).
 
@@ -58,13 +57,60 @@ I have decided to apply **Git flow** to the git repository so there are multiple
 
 ## Next Potential Improvements
 
+- Isolate components to improve their reusability and abstraction
 - Implement Vue Router
 - Implement Vue State Management
 - Implement Multiple Search Filters to search songs and other kind of collections from different Artists
 - Add Continuous Integration
-- Deploy the API in AWS Lambda using Serverless Framework
+- Add API Authentication with oAuth2 or Json Web Tokens (JWT)
+- Deploy the API in AWS Lambda using Serverless Framework or through Firebase Functions
 
 ---
+
+## Task 2 Analysis:
+
+> My refactored code is inside the folder task2 of this repository.
+
+My answers to the questions asked:
+
+#### Q: What do you think is wrong with the code, if anything?
+
+**A:**
+Some imports are missing, there is no error handling at the request level but at the overall function logic either.
+
+Also the logic is making use of "upsert" and "new" parameters. "Upsert" updates or creates a new record in the collection, so I imagine, that we want to retrieve the document created/updated in his latest state (once has been updated/created) and that is why the param. "new" is there. To achieve that we can make use of the parameter "returnNewDocument" rather than "new".
+Using of callbacks and exec functions when interacting with mongoose might be a bit confusing for developers, but it's correct.
+Some returns on res.json calls where not properly placed IMHO
+Standarizing it using async-await helps to a better understandability and readability of the code and his flow.
+
+#### Q: Can you see any potential problems that could lead to exceptions
+
+**A:** Some error handling in multiple parts and and that could lead to exceptions.
+
+#### Q: How would you refactor this code to Make it easier to read + Increase code reusability + Improve the stability of the system + Improve the testability of the code
+
+**A:** Attached is my code for review of the refactor. This is the summary of the improvements made during the refactor:
+
+- We must import the superagent module, the User and Shop mongoose models to be able to reference them in the code
+- We can make use of arrow functions in JavaScript modern syntax.
+- "var" can be declared as "let" to restrict the scope to the current function and not above It.
+- The condition: shop.invitations.indexOf to check If an invitation is in the array or not is not being compared to -1, so the 0 will be considered falsy and the -1 truly, which is not the intended behaviour. The refactor suggested is to make use of !shop.invitations.includes(invitationResponse.body.invitationId) to check if the invitationId exists in the array already or not.
+- We can handle errors making use of try-catch statements and .catchError for promises
+- we can make use of .catchError to handle request errors separately
+- Making the inviteUser method asynchronous, we can make use of async-await inside of it, which can be useful to improve code readability when querying the DB and remove the callbacks and execs just by converting the queries to promises with await
+- We can put the return statements in every res.json call
+
+#### Q: How might you use the latest JavaScript features to refactor the code?
+
+**A:** I implemented them in the code attached. In summary, we can make use of async await, arrow functions, "let" and not "var" declarations for variables, and other changes documented in the code (available for review as stated).
+
+**Other optional improvements that can be made: (opinionable)**
+
+- We can wrap all the errors inside an errorHandler function that builds the same respones object for a better standarization, maintainability and readability
+- We can put the IF conditions in variables with clear names rather than raw compare with status codes. This will improve code readability E.g. isRecordCreated or isInvitedAlready rather than perform a comparison with response status codes
+- We can create the mongoose models and schemas in separated files
+- We can create an abstract class to interact with the database and connect to it
+- We can make use of env. vars (locally with dotenv npm module) to store secrets
 
 ---
 
@@ -155,49 +201,50 @@ repository. Then send us a link, we will review and get back to you.
 
 Good luck!
 
-#### Task 2 Code Snippet
+#### Task 2 Code Snippet (as it is provided)
 
 ```Node
 
 exports.inviteUser = function(req, res) {
-var invitationBody = req.body;
-var shopId = req.params.shopId;
-var authUrl = "https://url.to.auth.system.com/invitation";
-superagent
-  .post(authUrl)
-  .send(invitationBody)
-  .end(function(err, invitationResponse) {
+  var invitationBody = req.body;
+  var shopId = req.params.shopId;
+  var authUrl = "https://url.to.auth.system.com/invitation";
+
+  superagent
+    .post(authUrl)
+    .send(invitationBody)
+    .end(function(err, invitationResponse) {
       if (invitationResponse.status === 201) {
-         User.findOneAndUpdate({
-            authId: invitationResponse.body.authId
-         }, {
-            authId: invitationResponse.body.authId,
-            email: invitationBody.email
-         }, {
-            upsert: true,
-            new: true
-         }, function(err, createdUser) {
-            Shop.findById(shopId).exec(function(err, shop) {
-               if (err || !shop) {
-                  return res.status(500).send(err || { message: 'No shop found' });
-               }
-               if (shop.invitations.indexOf(invitationResponse.body.invitationId)) {
-                  shop.invitations.push(invitationResponse.body.invitationId);
-               }
-               if (shop.users.indexOf(createdUser.\_id) === -1) {
-                  shop.users.push(createdUser);
-               }
-               shop.save();
-            });
-         });
+        User.findOneAndUpdate({
+          authId: invitationResponse.body.authId
+        }, {
+          authId: invitationResponse.body.authId,
+          email: invitationBody.email
+        }, {
+          upsert: true,
+          new: true
+        }, function(err, createdUser) {
+          Shop.findById(shopId).exec(function(err, shop) {
+            if (err || !shop) {
+              return res.status(500).send(err || { message: 'No shop found' });
+            }
+            if (shop.invitations.indexOf(invitationResponse.body.invitationId)) {
+              shop.invitations.push(invitationResponse.body.invitationId);
+            }
+            if (shop.users.indexOf(createdUser._id) === -1) {
+              shop.users.push(createdUser);
+            }
+            shop.save();
+          });
+        });
       } else if (invitationResponse.status === 200) {
-         res.status(400).json({
-            error: true,
-            message: 'User already invited to this shop'
-         });
-         return;
+        res.status(400).json({
+          error: true,
+          message: 'User already invited to this shop'
+        });
+        return;
       }
       res.json(invitationResponse);
-   });
+    });
 };
 ```
