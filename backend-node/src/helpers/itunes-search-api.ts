@@ -30,33 +30,33 @@ export const iTunesLookUp = async (
   const apiLookUpBaseUrl = "https://itunes.apple.com/lookup";
   const reqUrl = `${apiLookUpBaseUrl}/?entity=${entity.toLowerCase()}&id=${artistId}`;
 
-  if ("useDummyData") {
-    // Uncomment to use Dummy data for dev purposes
-    return parseAlbumsByArtistResults(
-      { results: dummyItunesData, resultCount: dummyItunesData.length },
-      entity
-    );
-  }
+  // if ("useDummyData") {
+  //   // Uncomment to use Dummy data for dev purposes
+  //   return parseAlbumsByArtistResults(
+  //     { results: dummyItunesData, resultCount: dummyItunesData.length },
+  //     entity
+  //   );
+  // }
 
-  // const apiResponse: any = await axios
-  //   .get(reqUrl)
-  //   .then(({ status, data }): iTunesAlbumCollectionType[] => {
-  //     // Parse results to filter the artist info and return just the albums
+  const apiResponse: any = await axios
+    .get(reqUrl)
+    .then(({ status, data }): iTunesAlbumCollectionType[] => {
+      // Parse results to filter the artist info and return just the albums
 
-  //     if (status === 200) return parseAlbumsByArtistResults(data, entity);
+      if (status === 200) return parseAlbumsByArtistResults(data, entity);
 
-  //     // else  return { resultCount: 0, results: [] };
-  //     throw new Error(
-  //       "Problems with the request to iTunes Search APi for query url: " +
-  //         reqUrl
-  //     );
-  //   })
-  //   .catch((err: Error) => {
-  //     console.error(err);
-  //     return "Error: " + err.message;
-  //   });
+      // else  return { resultCount: 0, results: [] };
+      throw new Error(
+        "Problems with the request to iTunes Search APi for query url: " +
+          reqUrl
+      );
+    })
+    .catch((err: Error) => {
+      console.error(err);
+      return "Error: " + err.message;
+    });
 
-  // return apiResponse;
+  return apiResponse;
 };
 
 const parseAlbumsByArtistResults = (

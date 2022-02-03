@@ -2,15 +2,22 @@
   "name": "alexandre-coding-challenge",
   "version": "1.0.0",
   "description": "Coding Challenge by Alexandre Gimenez",
-  "main": "src/server.ts",
+  "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",
     "prebuild": "npm run clean && npm run formatting",
     "formatting": "prettier --write src/",
-    "serve": "nodemon src/server.ts",
+    "serve": "nodemon",
     "watch": "tsc --watch",
     "build": "tsc",
     "clean": "rd /s /q dist >nul 2>&1|echo.>nul && mkdir dist"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "exec": "ts-node src/server.ts"
   },
   "keywords": [],
   "author": "Alexandre Gimenez - Cooking Startups LTD.",
@@ -20,13 +27,18 @@
     "express": "^4.17.2",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.3.0",
     "typescript": "^4.5.5"
   },
   "devDependencies": {
-    "ts-node": "^10.4.0",
-    "prettier": "^2.5.1",
     "@types/axios": "^0.14.0",
     "@types/express": "^4.17.13",
-    "@types/morgan": "^1.9.3"
+    "@types/morgan": "^1.9.3",
+    "@types/swagger-jsdoc": "^6.0.1",
+    "@types/swagger-ui-express": "^4.1.3",
+    "concurrently": "^7.0.0",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0"
   }
 }
