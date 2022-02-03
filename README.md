@@ -2,7 +2,7 @@
 
 > Repository where I go through the coding challenge and I keep track of the changes and progress.
 
-Author: Alexandre Gimenez. Date: 1st February, 2022.
+Author: Alexandre Gimenez.
 Attached at the end is the Initial Coding Challenge description document "as-it-is" provided.
 
 I have decided to apply **Git flow** to the git repository so there are multiple branches for:
@@ -10,7 +10,8 @@ I have decided to apply **Git flow** to the git repository so there are multiple
 - main,
 - develop
 - features
-- Skipped: _QA, hotfix and staging are branches that would be useful for real projects but not for a small demo._
+- hotfix
+- Skipped: _QA and staging are branches that would be useful for real projects but not for a small demo._
 
 ## Tech Stack Expertise required
 
@@ -22,7 +23,7 @@ I have decided to apply **Git flow** to the git repository so there are multiple
 
 ## Technical decissions made
 
-- The technical decissions taken during the test beared in mind scalability, performance, user experiencie, code readability, best practices and big O efficiency (check the hashmap rather than iterating through the array)
+- The technical decissions taken during the test beared in mind code readability, code reusability, performance/efficiency, scalability, user experiencie and best practices overall.
 
 ## Roadmap
 
@@ -36,12 +37,12 @@ I have decided to apply **Git flow** to the git repository so there are multiple
 - [x] Learning Vue.js for the very first time and create a boilerplate project
 - [x] Create a Vue.js SPA Front-end displaying the album's names and thumbnails in a grid
 - [x] Create a filtering functionaly using a search box (without API requests)
-- [ ] Add Unit Testing to the task 1 and written explanations of the technical decissions
+- [x] Give written explanations of the technical decissions
 - [ ] Learn about Vue.js Unit Testing and Add It to the project
 
 #### Roadmap for Task 2
 
-- [ ] Add written explanations/justifications (take a look to Task 2 / Step 1)
+- [ ] Give written explanations/justifications for Task 2
 - [ ] Refactor the code accordingly
 
 ## Challenges faced during the development
