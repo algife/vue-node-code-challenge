@@ -1,6 +1,7 @@
 <template> 
-  <div class="album-list-grid">
-      <!-- ALBUM SHOWCASE -->
+  <div class="album-list-grid"> 
+      
+      <!-- ALBUM LIST SHOWCASE -->
       <div class="card album-list-element" 
             v-for="item in albums" 
             :key="item.collectionName" 
@@ -22,11 +23,9 @@
   </div>
 </template>
 
-<script> 
+<script>
 export default {
   name: "AlbumList",
-  components: [ 
-  ],
   props: {
     albums: Array,
     // TO USE ON SEARCH -- .filter(function (item) {return item.mensaje.match(/Foo/)})
