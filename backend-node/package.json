@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node dist/server.js",
     "prebuild": "npm run clean && npm run formatting",
-    "formatting": "prettier --write src/",
-    "serve": "nodemon",
+    "formatting": "npx prettier --write src/",
+    "serve": "npx nodemon src/server.ts",
     "watch": "tsc --watch",
     "build": "tsc",
     "clean": "rd /s /q dist >nul 2>&1|echo.>nul && mkdir dist"
